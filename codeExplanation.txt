@@ -47,4 +47,4 @@ all variable initialised to null except memory_values
 but we have a function in it ... 
 onclick on a tile a function "memoryFlipTile()" is triggered
 two arguments are passed in this function, this and element id.
-
+where element id is same as the alphabet that is inside the memory_values;
