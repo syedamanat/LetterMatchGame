@@ -1,0 +1,50 @@
+var memory_array=['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
+	var memory_values=[];
+	var memory_title_ids=[];
+	var tiles_flipped=0;
+first we declare array variables and initialise values 
+yes you can have your own memory_array elements  but each element
+should repeat twice not less and not more than that ... 
+right now we are using Alphabets from A to L ... its inside the memory_array twice because
+once you click a tile FIRST element is displayed ... and when you click on another tile you will be needing 
+same element existence in order to match or unmatch 
+
+memory_values array variable is used to insert two values inside it that is
+memory_values[0]="First value of clicked tile"
+memory_values[1]="Second value of clicked tile"
+this is done in order to compare them both and see whether the both the tiles match or not 
+
+memory_title_ids array variable is used to insert the ID of two elements which are clicked
+tiles_flipped is used in order to POP a congrats message if the tiles_flipped is equal to number of elements inside memory_array 
+this represents that if there are 10 tiles and if 10 successful flips have occured then the game is complete
+
+Array.prototype.memory_title_shuffle = function() {
+		var i=this.length,j,temp;
+		while(--i>0){
+			j=Math.floor(Math.random()*(i+1));
+			temp=this[j];
+			this[j]=this[i];
+			this[i]=temp;
+		}
+	};
+Internal array shuffling is done in order to display the elements at different positions on board and this has to done
+using a shuffling method 
+ignore the Math as of right now just now that SWAPPING is done 
+because it would make no sense to have matching elements SIDE by SIDE 
+
+
+function newBoard(){
+		tiles_flipped=0;
+		var output="";
+		memory_array.memory_title_shuffle();
+		for(var i=0;i<memory_array.length;i++){
+			output +='<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>'
+					}
+      document.getElementById('board').innerHTML=output;
+	}
+newBoard method is like a restart of game 
+all variable initialised to null except memory_values
+but we have a function in it ... 
+onclick on a tile a function "memoryFlipTile()" is triggered
+two arguments are passed in this function, this and element id.
+

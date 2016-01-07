@@ -1,0 +1,37 @@
+we start off making a small game using HTML5, CSS3, JAVASCRIPT
+First we invoke basic design for our tiles(small blocks) and the board
+
+div#board{
+	background-color: #ccc;
+                     border: #999 1px solid;
+	width: 800px;
+	height: 540px;
+	padding: 24px;
+	margin: 0px auto;
+}	
+
+the above snippet is for the design end of the board 
+the board is of  light grey (you can find color codes from w3schools.com)
+the board is of width 800 px and heigh 540 px 
+thats the basic info you need about the board
+
+
+ div#board>div{
+ 	background:url("images/question_mark.png") no-repeat;
+ 	border:#000 1px solid;
+ 	width: 71px;
+ 	height: 71px;
+ 	float: left;
+ 	margin: 10px;
+ 	padding: 20px;
+ 	font-size: 64px;
+ 	cursor: pointer;
+ 	text-align: center;
+ }
+
+the above code is for our TILES or the small blocks in which a letter or image is placed
+the intial image is of a question mark .. given by the  back ground url 
+with width and height  and margin is used to invoke a gap from one element to other with desired value
+cursor is not important ( i just did it to make it look good) 
+cursor property is used when you want different cursor when you roll your mouse over a image or div or text
+and text-align property is used for alignment of text inside the block or on tile
